@@ -1,0 +1,68 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  font-family: "poppins";
+}
+
+body {
+  height: 100vh;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.container {
+  border: 1px solid #bfc0c0;
+  padding: 1rem;
+  border-radius: 1rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 1rem;
+  
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  width: 100%;
+}
+
+.content {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  gap: 5px;
+}
+
+.subtitle {
+  margin-top: 10px;
+  font-size: x-small;
+  text-align: center;
+}
+
+.button {
+  padding-block: 10px;
+  background-color: #4f5d75;
+  border-radius: 0.5rem;
+  border: none;
+  color: white;
+  cursor: pointer;
+}
+
+#tituloLivro, #autor, #paginas, #quantidade, #anoPublicacao {
+  border: none;
+  background-color: #f1f1f1;
+  padding: 10px;
+  border-radius: 0.5rem;
+}
+
+.title {
+  color: #282f3b;
+}
