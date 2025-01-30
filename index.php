@@ -11,8 +11,10 @@
       <h1 class="title">Detalhes do livro</h1>
       <?php
         if ($_SERVER["REQUEST_METHOD"] == "POST"){
+          // usando o date() com Y para pegar apenas o Year (ano)
           $ano = intval(date("Y"));
 
+          // requisitando os valores dos inputs
           $tituloLivro = htmlspecialchars(trim($_POST["tituloLivro"]));
           $autor = htmlspecialchars(trim($_POST["autor"]));
           $anoPublicacao = intval($_POST["anoPublicacao"]);
@@ -31,6 +33,7 @@
           $printAutor = ($autor == "") ? "<p style='color: red;'>OOPS! Campo Vazio! </p>" : "<p>Autor: <b>$autor</b></p>";
           echo $printAutor;
           
+          // usando if e else para fazer a validação das datas
           if ($anoPublicacao <= 1800) {
             echo "<p style='color: red;'>Livro muito antigo!</p>";
           } elseif ($anoPublicacao > $ano) {
@@ -45,17 +48,21 @@
           $printQuantidade = ($quantidade < 0) ? "<p style='color: red;'>Quantidade no acervo inválida! </p>" : "<p>Quantidade no Acervo: <b>$quantidade</b></p>";
           echo $printQuantidade;
 
+          // calculo do tempo de publicação
           $tempoPublicacao = $ano - $anoPublicacao;
           echo "<p>Este livro foi publicado há: <b>$tempoPublicacao</b> anos</p>";
 
+          // calculo do valor estimado do acervo
           $valorEstimadoAcervo = $paginas * 0.50 * $quantidade;
           echo "<p>Valor estimado do livro: R$<b>" . number_format($valorEstimadoAcervo, 2, ',', '.') . "</b></p>";
+
         ?>
       </div>
 
       <!-- tratamento de erro -->
       <div class="error">
         <?php
+        // fazendo tratamento de erro
           } else {
               echo "<p>OOPS! Nada enviado!</p>";
           }
